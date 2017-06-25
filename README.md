@@ -37,4 +37,20 @@ There's an experimental patch for windows in this [PR](https://github.com/udacit
 
 ## Reflection
 
-### 
+### The effect each of the P, I, D components
+
+ - P(Proportional) controller gives a steering angle. But using only P component causes oscillation too much and finally, the car is off the track.
+
+ - D(Differential) component helps the car turn smoothly. It gives a quite good result, but the car is still off the track when the throttle is increased to 0.8.
+
+ - I(Integral) component correct steering angle finally.
+
+### Hyper-Parameter Optimization
+
+At first I tried using the parameters in the lectures. But the parameters didn't work well directly. So I Adjust the parameters up and down little by little.
+
+The final parameters:
+
+ - Kp: 0.1
+ - Ki: 0.0002
+ - Kd: 4.0
